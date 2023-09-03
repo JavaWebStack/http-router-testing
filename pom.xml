@@ -11,12 +11,12 @@
     </properties>
 
     <groupId>org.javawebstack</groupId>
-    <artifactId>http-server-testing</artifactId>
+    <artifactId>http-router-testing</artifactId>
     <version>${buildVersion}</version>
 
-    <name>http-server-testing</name>
-    <description>JUnit 5 compatible testing helpers for http-server</description>
-    <url>https://github.com/JavaWebStack/http-server-testing</url>
+    <name>http-router-testing</name>
+    <description>JUnit 5 compatible testing helpers for http-router</description>
+    <url>https://github.com/JavaWebStack/http-router-testing</url>
 
     <licenses>
         <license>
@@ -35,9 +35,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/JavaWebStack/http-server-testing.git</connection>
-        <developerConnection>scm:git:ssh://github.com:JavaWebStack/http-server-testing.git</developerConnection>
-        <url>https://github.com/JavaWebStack/http-server-testing/tree/master</url>
+        <connection>scm:git:git://github.com/JavaWebStack/http-router-testing.git</connection>
+        <developerConnection>scm:git:ssh://github.com:JavaWebStack/http-router-testing.git</developerConnection>
+        <url>https://github.com/JavaWebStack/http-router-testing/tree/master</url>
     </scm>
 
     <dependencies>

@@ -1,4 +1,4 @@
-package org.javawebstack.httpserver.testing;
+package org.javawebstack.http.router.testing;
 
 import org.javawebstack.abstractdata.AbstractElement;
 import org.javawebstack.httpserver.Exchange;
