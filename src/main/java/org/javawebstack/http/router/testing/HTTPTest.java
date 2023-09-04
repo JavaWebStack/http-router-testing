@@ -1,7 +1,7 @@
 package org.javawebstack.http.router.testing;
 
-import org.javawebstack.httpserver.HTTPMethod;
-import org.javawebstack.httpserver.HTTPServer;
+import org.javawebstack.http.router.HTTPMethod;
+import org.javawebstack.http.router.HTTPRouter;
 
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
@@ -12,15 +12,15 @@ import java.util.Map;
 
 public abstract class HTTPTest {
 
-    private final HTTPServer server;
+    private final HTTPRouter router;
     private final Map<String, String> defaultHeaders = new HashMap<>();
 
-    protected HTTPTest(HTTPServer server) {
-        this.server = server;
+    protected HTTPTest(HTTPRouter router) {
+        this.router = router;
     }
 
-    public HTTPServer getServer() {
-        return server;
+    public HTTPRouter getRouter() {
+        return router;
     }
 
     public void setDefaultHeader(String key, String value) {
@@ -68,11 +68,11 @@ public abstract class HTTPTest {
             } else if (content instanceof byte[]) {
                 socket.setInputStream(new ByteArrayInputStream((byte[]) content));
             } else {
-                socket.setInputStream(new ByteArrayInputStream(server.getAbstractMapper().toAbstract(content).toJsonString().getBytes(StandardCharsets.UTF_8)));
+                socket.setInputStream(new ByteArrayInputStream(router.getMapper().map(content).toJsonString().getBytes(StandardCharsets.UTF_8)));
             }
         }
-        TestExchange exchange = new TestExchange(server, socket);
-        server.execute(exchange);
+        TestExchange exchange = new TestExchange(router, socket);
+        router.execute(exchange);
         return exchange;
     }
 

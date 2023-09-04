@@ -43,8 +43,8 @@
     <dependencies>
         <dependency>
             <groupId>org.javawebstack</groupId>
-            <artifactId>http-server</artifactId>
-            <version>1.0.2</version>
+            <artifactId>http-router</artifactId>
+            <version>1.0.3-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

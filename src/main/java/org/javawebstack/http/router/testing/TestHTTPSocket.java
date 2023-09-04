@@ -1,7 +1,7 @@
 package org.javawebstack.http.router.testing;
 
-import org.javawebstack.httpserver.HTTPMethod;
-import org.javawebstack.httpserver.adapter.IHTTPSocket;
+import org.javawebstack.http.router.HTTPMethod;
+import org.javawebstack.http.router.adapter.IHTTPSocket;
 
 import java.io.*;
 import java.util.*;

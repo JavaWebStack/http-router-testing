@@ -1,9 +1,9 @@
 package org.javawebstack.http.router.testing;
 
 import org.javawebstack.abstractdata.AbstractElement;
-import org.javawebstack.httpserver.Exchange;
-import org.javawebstack.httpserver.HTTPServer;
-import org.javawebstack.httpserver.util.MimeType;
+import org.javawebstack.http.router.Exchange;
+import org.javawebstack.http.router.HTTPRouter;
+import org.javawebstack.http.router.util.MimeType;
 import org.junit.jupiter.api.Assertions;
 
 import java.io.ByteArrayOutputStream;
@@ -17,8 +17,8 @@ public class TestExchange extends Exchange {
     
     private TestHTTPSocket testSocket;
 
-    public TestExchange(HTTPServer service, TestHTTPSocket socket) {
-        super(service, socket);
+    public TestExchange(HTTPRouter router, TestHTTPSocket socket) {
+        super(router, socket);
         this.testSocket = socket;
     }
 
@@ -233,7 +233,7 @@ public class TestExchange extends Exchange {
             return element == null;
         if (element == null)
             return false;
-        AbstractElement val = getServer().getAbstractMapper().toAbstract(value);
+        AbstractElement val = getRouter().getMapper().map(value);
         if (val.isNull())
             return element.isNull();
         if (val.isObject()) {
