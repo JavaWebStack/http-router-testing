@@ -26,5 +26,6 @@ work-in-progress project though so it's not yet complete.
     <groupId>org.javawebstack</groupId>
     <artifactId>http-router-testing</artifactId>
     <version>1.0.0</version>
+    <scope>test</scope>
 </dependency>
 ```
